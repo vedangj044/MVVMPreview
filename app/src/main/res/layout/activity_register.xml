@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="RegisterModel"
+            type="com.vedangj044.mvvmpreview.RegisterViewModel" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegisterActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textSize="30sp"
+            android:id="@+id/infoTOP"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/infoTOP"
+            android:hint="Name"
+            android:text="@{RegisterModel.name}"
+            android:layout_margin="10dp"
+            android:id="@+id/name_edit_text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_edit_text"
+            android:hint="Username"
+            android:text="@{RegisterModel.username}"
+            android:layout_margin="10dp"
+            android:id="@+id/email_edit_text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_edit_text"
+            android:hint="Password"
+            android:text="@{RegisterModel.password}"
+            android:layout_margin="10dp"
+            android:id="@+id/password_edit_text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_edit_text"
+            android:hint="Retype Password"
+            android:text="@{RegisterModel.repassword}"
+            android:layout_margin="10dp"
+            android:id="@+id/repassword_edit_text"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/repassword_edit_text"
+            android:text="sign up"
+            android:onClick="@{(v) -> RegisterModel.onClick(v)}"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</layout>
