@@ -31,4 +31,13 @@
         android:id="@+id/recycler_screen"
         android:text="Recycler Screen"/>
 
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/recycler_screen"
+        android:id="@+id/book_screen"
+        android:text="List of Books Screen"/>
+
+
 </RelativeLayout>

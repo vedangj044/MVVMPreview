@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.vedangj044.mvvmpreview.loginCollection.LoginActivity;
 import com.vedangj044.mvvmpreview.recycleCollection.RecycleActivity;
 import com.vedangj044.mvvmpreview.registerCollection.RegisterActivity;
+import com.vedangj044.mvvmpreview.roomCollection.BookActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, RecycleActivity.class);
                 }
 
+                if(v.getId() == R.id.book_screen){
+                    intent = new Intent(MainActivity.this, BookActivity.class);
+                }
+
                 startActivity(intent);
             }
         };
@@ -49,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button b3 = findViewById(R.id.recycler_screen);
         b3.setOnClickListener(clickListener);
+
+        Button b4 = findViewById(R.id.book_screen);
+        b4.setOnClickListener(clickListener);
 
 
     }

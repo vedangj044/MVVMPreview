@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVVMPreview</string>
+    <string name="booklogo">bookLogo</string>
 </resources>
