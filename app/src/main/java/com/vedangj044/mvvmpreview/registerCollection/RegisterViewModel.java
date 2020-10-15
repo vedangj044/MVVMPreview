@@ -1,10 +1,11 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.registerCollection;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.vedangj044.mvvmpreview.registerCollection.RegisterModel;
 
 public class RegisterViewModel extends ViewModel {
 

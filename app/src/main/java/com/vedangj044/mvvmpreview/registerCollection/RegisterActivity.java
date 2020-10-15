@@ -1,4 +1,4 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.registerCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -6,14 +6,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.vedangj044.mvvmpreview.R;
 import com.vedangj044.mvvmpreview.databinding.ActivityRegisterBinding;
+import com.vedangj044.mvvmpreview.recycleCollection.RecycleActivity;
 
 import java.util.Objects;
 
@@ -32,13 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         activityRegisterBinding.setLifecycleOwner(this);
         activityRegisterBinding.setRegisterModel(registerViewModel);
 
-        activityRegisterBinding.nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, RecycleActivity.class);
-                startActivity(intent);
-            }
-        });
 
         registerViewModel.getNewUser().observe(this, new Observer<RegisterModel>() {
             @Override

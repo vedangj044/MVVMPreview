@@ -6,7 +6,7 @@
 
         <variable
             name="ContactModel"
-            type="com.vedangj044.mvvmpreview.ContactModel" />
+            type="com.vedangj044.mvvmpreview.recycleCollection.ContactModel" />
 
     </data>
 

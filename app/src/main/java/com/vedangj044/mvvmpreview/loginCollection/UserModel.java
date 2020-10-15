@@ -1,4 +1,4 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.loginCollection;
 
 public class UserModel {
 

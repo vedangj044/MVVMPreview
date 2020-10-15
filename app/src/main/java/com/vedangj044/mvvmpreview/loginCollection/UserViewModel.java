@@ -1,9 +1,11 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.loginCollection;
 
 import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.vedangj044.mvvmpreview.loginCollection.UserModel;
 
 public class UserViewModel extends ViewModel {
 

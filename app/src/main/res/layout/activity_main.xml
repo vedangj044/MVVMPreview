@@ -1,77 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/list_button">
 
-    <data>
-        <variable
-            name="UserViewModel"
-            type="com.vedangj044.mvvmpreview.UserViewModel" />
-    </data>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:id="@+id/login_screen"
+        android:text="Login Screen"/>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_screen"
+        android:id="@+id/register_screen"
+        android:text="Register Screen"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="30sp"
-            android:id="@+id/intro_text"
-            android:layout_margin="20dp"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_screen"
+        android:id="@+id/recycler_screen"
+        android:text="Recycler Screen"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:hint="Username / Email"
-            android:layout_below="@id/intro_text"
-            android:id="@+id/username_edit_text"
-            android:text="@={UserViewModel.username}"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/username_edit_text"
-            android:hint="Password"
-            android:layout_margin="20dp"
-            android:id="@+id/password_edit_text"
-            android:text="@={UserViewModel.password}"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:id="@+id/login_button"
-            android:layout_below="@id/password_edit_text"
-            android:text="Login"
-            android:onClick="@{(v) -> UserViewModel.onClick(v)}"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/login_button"
-            android:layout_margin="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dont have an account ? "
-                android:textSize="16sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Register"
-                android:textSize="16sp"
-                android:id="@+id/register_text_view"
-                android:textColor="@color/colorPrimary"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-</layout>
+</RelativeLayout>

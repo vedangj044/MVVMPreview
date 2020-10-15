@@ -1,7 +1,6 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.recycleCollection;
 
 import android.os.CountDownTimer;
-import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -26,7 +25,6 @@ public class ContactDataLoad extends ViewModel {
     CountDownTimer cp = new CountDownTimer(10000, 2000) {
         @Override
         public void onTick(long millisUntilFinished) {
-            Log.v("lo", "tick");
             contactData.getValue().add(new ContactModel("Vedang Joshi", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
             contactData.setValue(contactData.getValue());
         }

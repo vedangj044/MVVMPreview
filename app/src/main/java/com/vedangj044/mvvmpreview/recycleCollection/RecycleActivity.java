@@ -1,18 +1,18 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.recycleCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.vedangj044.mvvmpreview.R;
 import com.vedangj044.mvvmpreview.databinding.ActivityRecycleBinding;
+import com.vedangj044.mvvmpreview.recycleCollection.ContactAdapter;
+import com.vedangj044.mvvmpreview.recycleCollection.ContactDataLoad;
+import com.vedangj044.mvvmpreview.recycleCollection.ContactModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleActivity extends AppCompatActivity {

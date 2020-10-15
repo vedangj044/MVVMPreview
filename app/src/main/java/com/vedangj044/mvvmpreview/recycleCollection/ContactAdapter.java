@@ -1,7 +1,6 @@
-package com.vedangj044.mvvmpreview;
+package com.vedangj044.mvvmpreview.recycleCollection;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;

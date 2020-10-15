@@ -7,7 +7,7 @@
 
         <variable
             name="ContactAdapter"
-            type="com.vedangj044.mvvmpreview.ContactAdapter" />
+            type="com.vedangj044.mvvmpreview.recycleCollection.ContactAdapter" />
 
     </data>
 
@@ -15,7 +15,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RecycleActivity">
+        tools:context=".recycleCollection.RecycleActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
