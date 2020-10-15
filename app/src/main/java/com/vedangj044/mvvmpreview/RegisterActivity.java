@@ -5,10 +5,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.vedangj044.mvvmpreview.databinding.ActivityRegisterBinding;
@@ -30,33 +32,57 @@ public class RegisterActivity extends AppCompatActivity {
         activityRegisterBinding.setLifecycleOwner(this);
         activityRegisterBinding.setRegisterModel(registerViewModel);
 
-        registerViewModel.getNewUser().observe(this, new Observer<UserModel>() {
+        activityRegisterBinding.nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChanged(UserModel userModel) {
-
-//                UserModel model = Objects.requireNonNull(userModel);
-//                Boolean available = TextUtils.isEmpty(model.getName()) && TextUtils.isEmpty(model.getUsername()) && TextUtils.isEmpty(model.getPassword());
-//
-//                if(!available){
-                    Toast.makeText(RegisterActivity.this, "Fields cant be empty", Toast.LENGTH_SHORT).show();
-//                }
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, RecycleActivity.class);
+                startActivity(intent);
             }
         });
 
-        registerViewModel.getRePass().observe(this, new Observer<String>() {
+        registerViewModel.getNewUser().observe(this, new Observer<RegisterModel>() {
             @Override
-            public void onChanged(String s) {
+            public void onChanged(RegisterModel registerModel) {
 
-                Log.v("A", "Ass");
-                if(s.equals(registerViewModel.password.getValue())){
-                    activityRegisterBinding.repasswordEditText.setBackgroundColor(Color.parseColor("#a5ecd7"));
+                boolean flag = false;
+
+                if(TextUtils.isEmpty(Objects.requireNonNull(registerModel).getName())){
+                    flag = true;
+                    activityRegisterBinding.nameEditText.setError("Enter Name");
                 }
                 else{
-                    activityRegisterBinding.repasswordEditText.setBackgroundColor(Color.parseColor("#e97171"));
+                    activityRegisterBinding.nameEditText.setError(null);
+                }
+
+                if(TextUtils.isEmpty(Objects.requireNonNull(registerModel).getUsername())){
+                    flag = true;
+                    activityRegisterBinding.emailEditText.setError("Enter Username");
+                }
+                else {
+                    activityRegisterBinding.emailEditText.setError(null);
+                }
+
+                if(TextUtils.isEmpty(Objects.requireNonNull(registerModel).getPassword())){
+                    flag = true;
+                    activityRegisterBinding.passwordEditText.setError("Enter password");
+                }
+                else {
+                    activityRegisterBinding.passwordEditText.setError(null);
+                }
+
+                if(!flag && !registerModel.getPassword().equals(registerModel.getRepassword())){
+                    flag = true;
+                    activityRegisterBinding.repasswordEditText.setError("Password mismatch");
+                }
+                else{
+                    activityRegisterBinding.repasswordEditText.setError(null);
+                }
+
+                if(!flag){
+                    Toast.makeText(RegisterActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
     }
 }

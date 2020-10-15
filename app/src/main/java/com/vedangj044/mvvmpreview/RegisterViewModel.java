@@ -14,31 +14,18 @@ public class RegisterViewModel extends ViewModel {
     public MutableLiveData<String> repassword = new MutableLiveData<>();
 
 
-    private MutableLiveData<UserModel> newUser;
+    private MutableLiveData<RegisterModel> newUser;
 
-    public MutableLiveData<UserModel> getNewUser(){
+    public MutableLiveData<RegisterModel> getNewUser(){
         if(newUser == null){
             newUser = new MutableLiveData<>();
         }
         return newUser;
     }
 
-    public MutableLiveData<String> getRePass(){
-        if(repassword == null){
-            repassword = new MutableLiveData<>();
-        }
-        return repassword;
-    }
 
     public void onClick(View v){
-        UserModel userModel = new UserModel(name.getValue(), username.getValue(), password.getValue());
-        validPassword();
-        newUser.setValue(userModel);
+        RegisterModel registerModel = new RegisterModel(name.getValue(), username.getValue(), password.getValue(), repassword.getValue());
+        newUser.setValue(registerModel);
     }
-
-    public Boolean validPassword(){
-        Log.v("aa", password.getValue() +"  "+ repassword.getValue());
-        return password.getValue().equals(repassword.getValue());
-    }
-
 }
