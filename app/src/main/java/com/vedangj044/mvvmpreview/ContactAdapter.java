@@ -9,15 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.vedangj044.mvvmpreview.databinding.ContactItemBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
 
-    private List<ContactModel> contactModelsList;
-
-    public ContactAdapter(List<ContactModel> contactModelsList) {
-        this.contactModelsList = contactModelsList;
-    }
+    public List<ContactModel> contactModelsList = new ArrayList<>();
 
     @NonNull
     @Override

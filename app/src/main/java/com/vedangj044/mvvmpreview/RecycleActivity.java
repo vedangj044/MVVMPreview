@@ -2,6 +2,9 @@ package com.vedangj044.mvvmpreview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +18,7 @@ import java.util.List;
 public class RecycleActivity extends AppCompatActivity {
 
     private ActivityRecycleBinding binding;
+    private ContactDataLoad contactViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +26,17 @@ public class RecycleActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recycle);
 
-        List<ContactModel> contactModelList = new ArrayList<>();
-        contactModelList.add(new ContactModel("Vedang Joshi", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
-        contactModelList.add(new ContactModel("Hello World", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
-        contactModelList.add(new ContactModel("Data binding", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
+        contactViewModel = new ViewModelProvider(this).get(ContactDataLoad.class);
 
-        ContactAdapter contactAdapter = new ContactAdapter(contactModelList);
+        final ContactAdapter contactAdapter = new ContactAdapter();
         binding.setContactAdapter(contactAdapter);
 
+        contactViewModel.getContactData().observe(this, new Observer<List<ContactModel>>() {
+            @Override
+            public void onChanged(List<ContactModel> contactModels) {
+                contactAdapter.contactModelsList = contactModels;
+                contactAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }
