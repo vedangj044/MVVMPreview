@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:adapter="@{ContactAdapter}"
+            app:adapter="@{ContactAdapter}"
             android:id="@+id/recycler_view"/>
 
     </RelativeLayout>

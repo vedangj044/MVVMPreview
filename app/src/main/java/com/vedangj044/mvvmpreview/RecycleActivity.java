@@ -23,9 +23,9 @@ public class RecycleActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recycle);
 
         List<ContactModel> contactModelList = new ArrayList<>();
-        contactModelList.add(new ContactModel("Vedang Joshi", "+91-7898454072"));
-        contactModelList.add(new ContactModel("Hello World", "+91-7898454072"));
-        contactModelList.add(new ContactModel("Data binding", "+91-7898454072"));
+        contactModelList.add(new ContactModel("Vedang Joshi", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
+        contactModelList.add(new ContactModel("Hello World", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
+        contactModelList.add(new ContactModel("Data binding", "+91-7898454072", "https://a10.gaanacdn.com/images/albums/18/2026518/crop_480x480_2026518.jpg"));
 
         ContactAdapter contactAdapter = new ContactAdapter(contactModelList);
         binding.setContactAdapter(contactAdapter);
