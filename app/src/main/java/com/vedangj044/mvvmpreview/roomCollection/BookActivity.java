@@ -6,7 +6,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.vedangj044.mvvmpreview.R;
 import com.vedangj044.mvvmpreview.databinding.ActivityBookBinding;
@@ -35,6 +37,12 @@ public class BookActivity extends AppCompatActivity {
             }
         });
 
-//        bookViewModel.insert(new BookModel("Da Vinci Code", 3, "https://static.rogerebert.com/uploads/review/primary_image/reviews/the-da-vinci-code-2006/EB20060518REVIEWS60419009AR.jpg"));
+        binding.floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this, AddModelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -20,11 +20,11 @@ public class BookModel {
 
     private String bookName;
 
-    private int bookRating;
+    private Float bookRating;
 
     private String bookLogoURL;
 
-    public BookModel(String bookName, int bookRating, String bookLogoURL) {
+    public BookModel(String bookName, Float bookRating, String bookLogoURL) {
         this.bookName = bookName;
         this.bookRating = bookRating;
         this.bookLogoURL = bookLogoURL;
@@ -46,11 +46,11 @@ public class BookModel {
         this.bookName = bookName;
     }
 
-    public int getBookRating() {
+    public Float getBookRating() {
         return bookRating;
     }
 
-    public void setBookRating(int bookRating) {
+    public void setBookRating(Float bookRating) {
         this.bookRating = bookRating;
     }
 

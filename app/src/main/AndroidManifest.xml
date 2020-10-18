@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".roomCollection.BookActivity"></activity>
+        <activity android:name=".roomCollection.AddModelActivity"></activity>
+        <activity android:name=".roomCollection.BookActivity" />
         <activity android:name=".loginCollection.LoginActivity" />
         <activity android:name=".recycleCollection.RecycleActivity" />
         <activity android:name=".registerCollection.RegisterActivity" />

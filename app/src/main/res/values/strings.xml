@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MVVMPreview</string>
     <string name="booklogo">bookLogo</string>
+    <string name="add_new_books">Add New Books</string>
+    <string name="book_name">Book Name</string>
+    <string name="book_logo_url">Book Logo URL</string>
+    <string name="book_rating">Book Rating</string>
+    <string name="submit_entry">Submit</string>
 </resources>
